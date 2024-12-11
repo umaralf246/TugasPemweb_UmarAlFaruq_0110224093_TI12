@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sytle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Selamat datang</h1>
+        <p>Silakan pilih Hewan yang anda sukai</p>
+    </header>
+    <section>
+    <div class="animal-container">
+        <div class="animal" onclick="playSound('kucing')">
+            <img src="img/kucing.jpg" alt="Kucing">
+            <p>Kucing</p>
+        </div>
+        <div class="animal" onclick="playSound('anjing')">
+            <img src="img/anjing.jpg" alt="Anjing">
+            <p>Anjing</p>
+        </div>
+        <div class="animal" onclick="playSound('sapi')">
+            <img src="img/sapi.jpg" alt="Sapi">
+            <p>Sapi</p>
+        </div>
+        <div class="animal" onclick="playSound('harimau')">
+            <img src="img/harimau.jpg" alt="Harimau">
+            <p>Harimau</p>
+        </div>
+        <div class="animal" onclick="playSound('ayam')">
+            <img src="img/ayam.jpg" alt="Ayam">
+            <p>Ayam</p>
+        </div>
+    </div>
+
+</section>
+<div id="display">
+    <p>Klik hewan untuk memunculkan suara</p>
+    <img id="displayImage" src="" alt="Gambar Hewan" style="display: none;">
+</div>
+
+<audio id="animalSound"></audio>
+
+<script>
+    function playSound(animal) {
+        // Memainkan suara
+        const sound = document.getElementById("animalSound");
+        sound.src = `sound/${animal}.mp3`;
+        sound.play();
+    }
+</script>
+</body>
+</html>
